@@ -3,10 +3,12 @@ go: 1.1
 install:
   - go get github.com/plouc/go-gitlab-client
   - go get github.com/plouc/go-github-client
-  - go get github.com/plouc/go-jira-client
+  #- go get github.com/plouc/go-jira-client
   - go get github.com/gorilla/mux
   - go get github.com/gorilla/schema
   - go get labix.org/v2/mgo
   - go get github.com/mattbaird/elastigo/api
 before_script:
-  - ./setup	
+  - ./setup
+services:
+  - elasticsearch	
