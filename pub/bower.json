@@ -1,0 +1,16 @@
+{
+  "name": "pompoco",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": ">= 1.0.6",
+    "angular-ui-router": "0.0.1",
+    "components-font-awesome": "*",
+    "jquery": "~1.9.1",
+    "typeahead.js": "*"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "vendor"
+  ]
+}
