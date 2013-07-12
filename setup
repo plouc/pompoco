@@ -2,6 +2,58 @@
 
 set -x
 
-cd pub
-bower install
-cd ..
+# clear elastic search index
+curl -XDELETE 'http://localhost:9200/pompoco/'
+
+# create index and mappings
+curl -XPOST localhost:9200/pompoco -d '{
+    "settings" : {
+        "analysis":{
+          "analyzer":{
+            "autocomplete":{
+              "type":"custom",
+              "tokenizer":"standard",
+              "filter":[ "standard", "lowercase", "stop", "kstem", "ngram" ] 
+            }
+          },
+          "filter":{
+            "ngram":{
+              "type":"ngram",
+              "min_gram":2,
+              "max_gram":15
+            }
+          }
+        }
+    },
+    "mappings" : {
+      "event" : {
+        "_source" : { "enabled" : true },
+        "properties" : {
+          "description":{
+            "type":"multi_field",
+            "fields":{
+              "description":{
+                "type":"string"
+              },
+              "autocomplete":{
+                "analyzer":"autocomplete",
+                "type":"string"
+              }
+            }
+          },
+          "username":{
+            "type":"multi_field",
+            "fields":{
+              "username":{
+                "type":"string"
+              },
+              "autocomplete":{
+                "analyzer":"autocomplete",
+                "type":"string"
+              }
+            }
+          }
+        }
+      }
+    }
+}'
