@@ -9,6 +9,7 @@ install:
   - go get labix.org/v2/mgo
   - go get github.com/mattbaird/elastigo/api
 before_script:
-  - ./setup
+  - npm install -g bower
+  - bower install
 services:
   - elasticsearch	
