@@ -6,7 +6,8 @@
     "angular-ui-router": "0.0.1",
     "components-font-awesome": "*",
     "jquery": "~1.9.1",
-    "typeahead.js": "*"
+    "typeahead.js": "*",
+    "normalize-css": "2.1.2"
   },
   "ignore": [
     "**/.*",
