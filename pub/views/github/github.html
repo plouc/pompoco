@@ -1,0 +1,12 @@
+<div class="subnav-container">
+    <ul class="subnav">
+        <li class="subnav-item">
+            <h3>Repositories</h3>
+        </li>
+        <li class="subnav-item" ng-repeat="repo in repos">
+            <a href="#/github/repo/{{repo.full_name}}"><i class="icon-chevron-right" ng-show="$state.params.name == repo.name"></i>{{repo.name}}</a>
+        </li>
+    </ul>
+</div>
+<div class="content" ui-view>
+</div>

@@ -1,0 +1,489 @@
+body {
+  color: #555;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: "Lucida Grande";
+}
+a {
+  text-decoration: none;
+  color: #555;
+}
+.app-header {
+  height: 50px;
+  line-height: 50px;
+  background: #2f2929;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+.app-header a {
+  color: #d7eae6;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 19px; 
+}
+.selectors {
+  float: right;
+}
+
+.nav {
+  overflow: auto;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  background: #c2e4d1;
+  margin: 0;
+  list-style: none;
+  float: left;
+  width: 15%;
+  box-sizing: border-box;
+  padding: 20px 15px 0 15px;
+  border-right: 1px solid #a6cbb9;
+  /*box-shadow: -1px 0 2px rgba(0, 0, 0, 0.05) inset;*/
+}
+.nav ul {
+  margin: 0 0 3px 0;
+  padding: 0;
+  list-style: none;
+}
+.nav i {
+  display: inline-block;
+  margin: 0 7px;
+  width: 12px !important;
+  text-align: center;
+}
+.nav > li {
+  border-bottom: 1px solid #a6cbb9;
+}
+.nav > li:first-child {
+  border-top: 1px solid #a6cbb9;
+}
+.nav > li > a,
+.nav > li > span {
+  font-size: 15px;
+}
+.nav a,
+.nav span {
+  display: block;
+  padding: 5px 0;
+  border-radius: 2px;
+  white-space: pre;
+}
+.nav .active a,
+.nav .active span {
+  color: #000;
+}
+.nav a:hover {
+  background: #d4f1e4;
+}
+.nav li li a,
+.nav li li span {
+  padding: 3px 0 3px 30px;
+  border: none;
+}
+.nav-item:hover {
+  background: #eee;
+}
+.nav-item.current span,
+.nav-item.current a {
+  color: #000;
+}
+
+
+.subnav-container {
+  padding: 10px 15px 0 15px;
+  float: left;
+  width: 20%;
+  position: absolute;
+  top: 50px;
+  left: 15%;
+  bottom: 0;
+  background: #e1ede7;
+  overflow: auto;
+  box-sizing: border-box;
+  border-right: 1px solid #a6cbb9;
+  /*box-shadow: -2px 0 3px rgba(0, 0, 0, 0.1) inset;*/
+}
+.subnav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.subnav i {
+  font-size: 9px;
+}
+.subnav-separator {
+  margin: 10px 0 0 0;
+}
+.subnav-item a {
+  display: block;
+  padding: 4px 7px;
+  border-radius: 2px;
+}
+.subnav-item a:hover {
+  background: #fff;
+}
+.subnav-item i {
+  margin-right: 3px;
+}
+.subnav-item.current,
+.subnav-item.current a {
+  color: #000;
+}
+
+.content {
+  position: absolute;
+  top: 50px;
+  left: 35%;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+.content-full {
+  position: absolute;
+  top: 50px;
+  left: 15%;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+
+.link-bar {
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  font-size: 0;
+}
+.link-bar li {
+  display: inline-block;
+  border-right: 1px solid #bbb;
+}
+.link-bar a {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+.link-bar a:hover {
+  background: #fff;
+}
+
+
+h1 {
+  margin-top: 0;
+  font-size: 19px;
+  padding: 10px 15px;
+  border-bottom: 1px solid #cfc394;
+  color: #333;
+  font-weight: normal;
+  margin-bottom: 0;
+  background: #e8ddb0;
+}
+h2 {
+  font-size: 17px;
+}
+h3 {
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.list-item {
+  padding: 9px 15px;
+  border-bottom: 1px solid #eee;
+}
+.list-item-tag i,
+.list-item-branch i {
+  color: #999;
+  margin-right: 7px;
+}
+.list h3 {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.list-user li {
+  padding: 9px 15px;
+}
+
+.object-info {
+  padding: 0 15px;
+}
+.object-metadata {
+  padding: 0;
+  list-style: none;
+}
+.description {
+  padding: 7px 15px;
+  background: #eee;
+  border-radius: 2px;
+}
+
+input[type="password"],
+input[type="text"],
+textarea {
+  border: 1px solid #c8c3ad;
+  border-radius: 2px;
+  padding: 5px 9px;
+  /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;*/
+}
+input[type="password"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #9f9a85;
+  box-shadow: none;
+}
+.button,
+input[type="submit"] {
+  background: #ccc;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  padding: 5px 15px;
+  color: #333;
+}
+.button.button-ok,
+input[type="submit"].button-ok {
+  color: #355344;
+  background: #a6cbb9;
+  border-color: #90b2a1;
+  box-shadow: 0 1px 0 #b8d8c8 inset,
+              0 2px 1px rgba(0, 0, 0, 0.1);
+}
+.button.button-ok:hover,
+input[type="submit"].button-ok:hover {
+  background: #b8d8c8;
+  box-shadow: none;
+}
+.button.button-cancel,
+input[type="submit"].button-cancel {
+  color: #686040;
+  background: #cfc394;
+  border-color: #b5ab85;
+  box-shadow: 0 1px 0 #d9cea5 inset,
+              0 2px 1px rgba(0, 0, 0, 0.1);
+}
+.button.button-cancel:hover,
+input[type="submit"].button-cancel:hover {
+  background: #d9cea5;
+  box-shadow: none;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.timeline i {
+  margin-right: 5px;
+  font-size: 9px;
+  color: #fe7676;
+}
+.timeline li {
+  padding: 5px 15px;
+}
+
+.form-row {
+  margin-bottom: 7px;
+}
+.checkinlabel,
+.labelnfield label,
+.labelntextarea label {
+  background: #e8e1c5;
+  border: 1px solid #c8c3ad;
+  /*box-shadow: 0 1px 0 #fff inset;*/
+}
+.labelnfield,
+.labelntextarea {
+  box-shadow: 0 1px 0 #f1efee;
+}
+.checkinlabel {
+  /*box-shadow: 0 1px 0 #fff inset,
+              0 1px 0 #f1efee;*/
+}
+.checkinlabel {
+  display: inline-block;
+  border-radius: 3px;
+  height: 30px;
+  line-height: 28px;
+  box-sizing: border-box;
+  vertical-align: top;
+  padding: 0 10px 0 7px;
+  color: #888;
+}
+.checkinlabel.checked {
+  color: #333;
+}
+.labelnfield {
+  font-size: 0;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.labelnfield label {
+  margin-right: -1px;
+  vertical-align: top;
+  font-size: 13px;
+  height: 30px;
+  line-height: 28px;
+  padding: 0 10px;
+  display: inline-block;  
+  border-radius: 3px 0 0 3px;
+  box-sizing: border-box;
+}
+.labelnfield input {
+  background: #fff;
+  font-size: 13px;
+  height: 30px;
+  display: inline-block; 
+  border-radius: 0 3px 3px 0; 
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.labelntextarea {
+  width: 300px;
+}
+.labelntextarea label {
+  height: 30px;
+  line-height: 28px;
+  display: block;
+  border-radius: 3px 3px 0 0;
+  margin-bottom: -1px;
+  padding: 0 10px;
+}
+.labelntextarea textarea {
+  border-radius: 0 0 3px 3px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.user-form,
+.project-form {
+  background: #eef0eb;
+  padding: 10px 15px;
+  border-bottom: 1px solid #d7dad1;
+}
+.user-form .checkinlabel {
+  width: 100px;
+}
+.user-form .labelnfield label {
+  width: 120px;
+}
+
+.object-actions {
+  font-size: 0;
+  background: #dfdbd8;
+  display: inline-block;
+  border-radius: 2px;
+  font-weight: normal;
+  vertical-align: top;
+}
+.object-actions a,
+.object-actions span {
+  display: inline-block;
+  font-size: 10px;
+  padding: 0 7px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: top;
+}
+.object-actions a:hover {
+  background: #f1efee;
+}
+h1 .object-actions {
+  background: #c8b04c;
+}
+h1 .object-actions a,
+h1 .object-actions span {
+  color: #f5f1e3;
+  height: 22px;
+  line-height: 22px;
+  font-size: 11px;
+}
+h1 .object-actions a:hover {
+  background: #e0c96a;
+}
+
+
+.project-description {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  background: #fff;
+  border-radius: 2px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #999;
+  margin-top: -150px;
+  margin-left: -150px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.dialog-title {
+  padding: 5px 15px;
+  border-bottom: 1px solid #cfc394;
+  color: #333;
+  font-weight: normal;
+  margin-bottom: 0;
+  background: #e8ddb0;
+}
+.dialog-content {
+  padding: 10px 15px;
+}
+.dialog-close {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  background: #c8b04c;
+  color: #f5f1e3;
+  display: inline-block;
+  padding: 3px 7px;
+  font-size: 11px;
+  border-radius: 2px;
+}
+.dialog-close:hover {
+  background: #e0c96a;
+}
+
+.user-profile {
+  width: 100%;
+  overflow: hidden;
+}
+.user-profile-info {
+  margin: 10px 0 0 0;
+  font-size: 12px;
+  border-top: 1px solid #ddd;
+  width: 100%;
+}
+.user-profile-info td,
+.user-profile-info th {
+  text-align: left;
+  padding: 3px 7px;
+  border-bottom: 1px solid #ddd;
+}
+.user-profile-info td:first-child {
+  padding-left: 0;
+}
+.user-profile-info td:last-child {
+  padding-right: 0;
+}
+
+
+h1 .search {
+  font-size: 12px;
+}

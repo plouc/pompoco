@@ -1,0 +1,8 @@
+<h1>Delete project {{project.name}}</h1>
+<div>
+	<p>Are you sure ?</p>
+	<div class="form-validation">
+		<input class="button button-ok" type="submit" ng-click="delete()" value="yes">
+		<a class="button button-cancel" href="#/projects/{{project._id}}">cancel</a>
+	</div>
+</div>

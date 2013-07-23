@@ -1,0 +1,8 @@
+<h1>{{repo.name}}</h1>
+<div class="object-info">
+	<p ng-show="repo.description" class="description">{{repo.description}}</p>
+	<ul class="object-metadata">
+		<li><a href="{{repo.html_url}}"><i class="icon-link"></i> {{repo.html_url}}</a></li>
+		<li ng-show="repo.language"><i class="icon-code"></i> language: {{repo.language}}</li>
+	</ul>
+</div>

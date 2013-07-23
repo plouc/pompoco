@@ -1,0 +1,15 @@
+<div class="content-full">
+	<h1>
+		Timeline
+		<span class="object-actions">
+			<a ng-click="syncEvents()" ng-show="!synchronizing"><i class="icon-refresh"></i> sync</a>
+			<span ng-show="synchronizing"><i class="icon-cog icon-spin"></i> synchronizing</span>
+		</span>
+		<input class="search" type="text"/>
+	</h1>
+	<ul class="timeline">
+	    <li ng-repeat="event in events">
+	        <a href="#"><i class="icon-circle-blank"></i> <small class="event-date">{{event.occurred_at}}</small> {{event.description}}</a>
+	    </li>
+	</ul>
+</div>

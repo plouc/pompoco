@@ -1,0 +1,17 @@
+<div ng-show="project">
+    <h1>{{project.name}} <span ng-click="bindProject('gitlab-project', project)" class="object-actions"><a>bind project</a></span></h1>
+    
+    <ul>
+        <li>path: {{project.path_with_namespace}}</li>
+        <li>default branch: {{project.default_branch}}</li>
+        <li>namespace: {{project.namespace.Name}}</li>
+        <li>created at: {{project.created_at}}</li>
+    </ul>
+
+    <ul class="link-bar">
+        <li><a href="#/gitlab/project/{{project.id}}/branches"><i class="icon-code-fork"></i> branches</a></li>
+        <li><a href="#/gitlab/project/{{project.id}}/tags"><i class="icon-tag"></i> tags</a></li>
+    </ul>
+
+    <div ui-view></div>
+</div>

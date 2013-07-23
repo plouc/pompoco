@@ -1,0 +1,45 @@
+<h1>{{title}}</h1>
+
+<div class="user-form">
+	<form ng-submit="save()">
+		<div class="form-row labelnfield">
+			<label for="user_name">name</label>
+			<input id="user_name" name="user_name" type="text" ng-model="user.name">
+		</div>
+		<div class="form-row">
+			<label ng-class="{ checked: user.github_active }" class="checkinlabel">
+				<input type="checkbox" ng-model="user.github_active">
+				<i class="icon-github"></i> github
+			</label>
+			<div ng-show="user.github_active" class="labelnfield">
+				<label for="user_github_name">github name</label>
+				<input id="user_github_name" name="user_github_name" type="text" ng-model="user.github_name">
+			</div>
+		</div>
+		<div class="form-row">
+			<label ng-class="{ checked: user.gitlab_active }" class="checkinlabel">
+				<input type="checkbox" ng-model="user.gitlab_active">
+				<i class="icon-code"></i> gitlab
+			</label>
+			<div ng-show="user.gitlab_active" class="labelnfield">
+				<label for="user_gitlab_id">gitlab id</label>
+				<input id="user_gitlab_id" name="user_gitlab_id" type="text" ng-model="user.gitlab_id">
+			</div>
+		</div>
+		<div class="form-row">
+			<label ng-class="{ checked: user.jira_active }" class="checkinlabel">
+				<input type="checkbox" ng-model="user.jira_active">
+				<i class="icon-bug"></i> jira
+			</label>
+			<div ng-show="user.jira_active" class="labelnfield">
+				<label for="user_jira_username">jira name</label>
+				<input id="user_jira_username" name="user_jira_username" type="text" ng-model="user.jira_username">
+			</div>
+		</div>
+		<div class="form-validation">
+			<input class="button button-ok" type="submit" value="save">
+			<a ng-show="user._id" class="button button-cancel" href="#/users/{{user._id}}">cancel</a>
+			<a ng-show="!user._id" class="button button-cancel" href="#/users">cancel</a>
+		</div>
+	</form>
+</div>

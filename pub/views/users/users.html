@@ -1,0 +1,48 @@
+<div class="subnav-container">
+    <ul class="subnav">
+    	<li class="subnav-item">
+    		<a class="button button-ok" href="#/users/new"><i class="icon-plus"></i> create</a>
+    	</li>
+    	<li class="subnav-separator"></li>
+	    <li class="subnav-item" ng-repeat="user in users"
+	    	ng-class="{ current: $state.params.id == user._id }">
+	        <a href="#/users/{{user._id}}">
+	        	<i class="icon-chevron-right" ng-show="$state.params.id == user._id"></i> {{user.name}}
+	        </a>
+	    </li>
+	</ul>
+</div>
+<div class="content" ui-view>
+	<h1>
+		Projects
+		<span class="object-actions">
+	    	<a ng-click="#/users/new"><i class="icon-plus"></i> create</a>
+	    </span>
+	</h1>
+</div>
+
+<!--<div class="content-full">
+	<h1>
+		Users
+		<span class="object-actions">
+	    	<a ng-click="create()"><i class="icon-plus"></i> create</a>
+	    </span>
+	</h1>
+	<ul class="list list-user">
+	    <li class="list-item" ng-repeat="user in users">
+	        <span ng-show="user.github_active">
+	        	github
+	        	<strong >{{user.github_name}}</strong> |
+	        </span>
+	        <span ng-show="user.gitlab_active">
+	        	gitlab
+	        	<strong ng-show="user.gitlab_active">{{user.gitlab_name}}</strong> |
+	        </span>
+	        <span ng-show="user.jira_active">
+	        	jira
+	        	<strong ng-show="user.jira_active">{{user.gitlab_name}}</strong> |
+	        </span>
+	    </li>
+	</ul>
+</div>
+-->

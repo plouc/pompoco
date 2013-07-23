@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+
+<div class="project-form">
+	<form ng-submit="save()">
+		<div class="form-row labelnfield">
+			<label for="project_name">name</label>
+			<input id="project_name" name="project_name" type="text" ng-model="project.name">
+		</div>
+		<div class="form-row labelntextarea">
+			<label for="project_description">description</label>
+			<textarea id="project_description" name="project_description" ng-model="project.description">
+			</textarea>
+		</div>
+		<div class="form-validation">
+			<input class="button button-ok" type="submit" value="save">
+			<a ng-show="project._id" class="button button-cancel" href="#/projects/{{project._id}}">cancel</a>
+			<a ng-show="!project._id" class="button button-cancel" href="#/projects">cancel</a>
+		</div>
+	</form>
+</div>

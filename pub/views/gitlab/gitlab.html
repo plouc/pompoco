@@ -1,0 +1,13 @@
+<div class="subnav-container">
+    <ul class="subnav">
+        <li class="subnav-item">
+            <h3>Projects</h3>
+        </li>
+        <li class="subnav-item" ng-repeat="proj in projects"
+         	ng-class="{ current: $state.params.id == proj.id }">
+            <a href="#/gitlab/project/{{proj.id}}"><i class="icon-chevron-right" ng-show="$state.params.id == proj.id"></i> {{proj.name}}</a>
+        </li>
+    </ul>
+</div>
+<div class="content" ui-view>
+</div>

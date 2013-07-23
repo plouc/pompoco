@@ -1,0 +1,22 @@
+<div class="subnav-container">
+    <ul class="subnav">
+    	<li class="subnav-item">
+    		<a class="button button-ok" href="#/projects/new"><i class="icon-plus"></i> create</a>
+    	</li>
+    	<li class="subnav-separator"></li>
+	    <li class="subnav-item" ng-repeat="project in projects"
+	    	ng-class="{ current: $state.params.id == project._id }">
+	        <a href="#/projects/{{project._id}}">
+	        	<i class="icon-chevron-right" ng-show="$state.params.id == project._id"></i> {{project.name}}
+	        </a>
+	    </li>
+	</ul>
+</div>
+<div class="content" ui-view>
+	<h1>
+		Projects
+		<span class="object-actions">
+	    	<a ng-click="#/projects/new"><i class="icon-plus"></i> create</a>
+	    </span>
+	</h1>
+</div>

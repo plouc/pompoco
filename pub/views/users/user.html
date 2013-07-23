@@ -1,0 +1,155 @@
+<h1>
+	{{user.name}}
+	<span class="object-actions">
+		<a ng-show="!refreshing" ng-click="consolidate()"><i  class="icon-magic"></i> consolidate</a>
+		<span ng-show="refreshing"><i class="icon-cog icon-spin"></i> working</span>
+		<a href="#/users/{{user._id}}/edit"><i class="icon-pencil"></i> edit</a>
+		<a href="#/users/{{user._id}}/delete"><i class="icon-remove"></i> remove</a>
+		<a ng-click="bindProject('user', user)"><i class="icon-sitemap"></i> bind project</a>
+	</span>
+</h1>
+<div class="object-info">
+	<div class="user-profiles">
+		<div class="user-profile user-profile-github" ng-show="user.github_active">
+			<table class="user-profile-info">
+				<thead>
+					<tr>
+						<th></th>
+						<th><i class="icon-github"></i> github</th>
+						<th><i class="icon-code"></i> gitlab</th>
+						<th>jira</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-show="user.github_profile.avatar_url">
+				    	<td>avatar</td>
+				    	<td><img style="max-width: 26px;" ng-src="{{user.github_profile.avatar_url}}"/></td>
+				    	<td></td>
+				    	<td></td>
+				    </tr>
+				    <tr>
+				    	<td>name</td>
+				    	<td><strong>{{user.github_name}}</strong></td>
+				    	<td><strong>{{user.gitlab_profile.name}}</strong></td>
+				    	<td><strong>{{user.jira_profile.name}}</strong></td>
+				    </tr>
+				    <tr>
+				    	<td>id</td>
+				    	<td><strong>{{user.github_profile.id}}</strong></td>
+				    	<td><strong>{{user.gitlab_id}}</strong></td>
+				    	<td></td>
+				    </tr>
+				    <tr>
+				    	<td>created at</td>
+				    	<td><strong>{{user.github_profile.created_at}}</strong></td>
+				    	<td><strong>{{user.gitlab_profile.created_at}}</strong></td>
+				    	<td></td>
+				    </tr>
+				</tbody>
+			</table>
+		</div>
+		<!--
+		<div ng-show="user.gitlab_active">
+			<h3><i class="icon-code"></i> gitlab</h3>
+			<table class="user-profile-info">
+				<tbody>
+				    <tr ng-show="user.gitlab_profile.username">
+				    	<td>username</td>
+				    	<td><strong>{{user.gitlab_profile.username}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.gitlab_profile.email">
+				    	<td>email</td>
+				    	<td><strong>{{user.gitlab_profile.email}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.gitlab_profile.name">
+				    	<td>name</td>
+				    	<td><strong>{{user.gitlab_profile.name}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.gitlab_profile.state">
+				    	<td>state</td>
+				    	<td><strong>{{user.gitlab_profile.state}}</strong></td>
+				    </tr>
+				    
+				    <tr ng-show="user.gitlab_profile.extern_uid">
+				    	<td>external uid</td>
+				    	<td><strong>{{user.gitlab_profile.extern_uid}}</strong></td>
+				    </tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="user-profile user-profile-jira" ng-show="user.jira_active">
+							    <tr ng-show="user.github_profile.bio">
+				    	<td>bio</td>
+				    	<td><strong>{{user.github_profile.bio}}</strong></td>
+				    	<td><strong>{{user.github_profile.bio}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.html_url">
+				    	<td>url</td>
+				    	<td><strong>{{user.github_profile.html_url}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.url">
+				    	<td>api url</td>
+				    	<td><strong>{{user.github_profile.url}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.blog">
+				    	<td>blog</td>
+				    	<td><strong>{{user.github_profile.blog}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.company">
+				    	<td>company</td>
+				    	<td><strong>{{user.github_profile.company}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.email">
+				    	<td>email</td>
+				    	<td><strong>{{user.github_profile.email}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.followers">
+				    	<td>followers</td>
+				    	<td><strong>{{user.github_profile.followers}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.hireable">
+				    	<td>hireable</td>
+				    	<td><strong>{{user.github_profile.hireable}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.location">
+				    	<td>location</td>
+				    	<td><strong>{{user.github_profile.location}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.login">
+				    	<td>login</td>
+				    	<td><strong>{{user.github_profile.login}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.public_gists">
+				    	<td>public gists</td>
+				    	<td><strong>{{user.github_profile.public_gists}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.github_profile.type">
+				    	<td>account type</td>
+				    	<td><strong>{{user.github_profile.type}}</strong></td>
+				    </tr>
+
+			<h3><i class="icon-bug"></i> jira</h3>
+			<table class="user-profile-info">
+				<tbody>
+				    <tr ng-show="user.jira_profile.displayName">
+				    	<td>name</td>
+				    	<td><strong>{{user.jira_profile.displayName}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.jira_profile.emailAddress">
+				    	<td>email</td>
+				    	<td><strong>{{user.jira_profile.emailAddress}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.jira_profile.self">
+				    	<td>api url</td>
+				    	<td><strong>{{user.jira_profile.self}}</strong></td>
+				    </tr>
+				    <tr ng-show="user.jira_profile.active">
+				    	<td>active</td>
+				    	<td><strong>{{user.jira_profile.active}}</strong></td>
+				    </tr>
+				</tbody>
+			</table>
+		</div>
+		-->
+	</div>
+</div>
