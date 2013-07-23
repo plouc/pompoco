@@ -1,0 +1,20 @@
+log_file: /data/var/log/pompoco.log
+
+gitlab:
+  host:     https://gitlab.domain.com
+  api_path: /api/v3
+  token:    API_TOKEN
+
+jira:
+  host:          http://jira.domain.com
+  api_path:      /rest/api/2
+  activity_path: /activity
+  login:         JIRA_TOKEN
+  password:      JIRA_PASSWORD
+
+elasticsearch:
+  host: 127.0.0.1
+
+mongo:
+  host: 127.0.0.1
+  port: 27017
